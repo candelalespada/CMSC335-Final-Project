@@ -28,49 +28,47 @@ router.get('/search', async (req, res) => {
   }
 });
 
+// ⭐ change this route so you stay on the search page
 router.post("/save", async (req, res) => {
-    try {
-      const { mealId, name, category, area, thumbnail, instructions } = req.body;
-  
-      await Recipe.create({
-        mealId,
-        name,
-        category,
-        area,
-        thumbnail,
-        instructions,
-      });
-  
-      res.redirect("/saved");
-    } catch (err) {
-      console.error(err);
-      res.redirect("/");
-    }
-  });
+  try {
+    const { mealId, name, category, area, thumbnail, instructions } = req.body;
 
+    await Recipe.create({
+      mealId,
+      name,
+      category,
+      area,
+      thumbnail,
+      instructions,
+    });
+
+    // ⬇️ instead of going to /saved, go BACK to the page you were on
+    res.redirect("back");
+  } catch (err) {
+    console.error(err);
+    res.redirect("/");
+  }
+});
 
 router.post("/delete/:id", async (req, res) => {
-    try {
-      await Recipe.findByIdAndDelete(req.params.id);
-      res.redirect("/saved");
-    } catch (err) {
-      console.error(err);
-      res.redirect("/saved");
-    }
-  });
-  
+  try {
+    await Recipe.findByIdAndDelete(req.params.id);
+    res.redirect("/saved");
+  } catch (err) {
+    console.error(err);
+    res.redirect("/saved");
+  }
+});
 
 // Show all saved recipes
 router.get("/saved", async (req, res) => {
-    try {
-      const savedRecipes = await Recipe.find().sort({ dateSaved: -1 });
-      res.render("saved", { savedRecipes });
-    } catch (err) {
-      console.error(err);
-      res.render("saved", { savedRecipes: [] });
-    }
-  });
-  
-  
+  try {
+    const savedRecipes = await Recipe.find().sort({ dateSaved: -1 });
+    res.render("saved", { savedRecipes });
+  } catch (err) {
+    console.error(err);
+    res.render("saved", { savedRecipes: [] });
+  }
+});
 
 module.exports = router;
