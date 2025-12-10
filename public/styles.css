@@ -54,6 +54,28 @@ img {
 }
 
 label {
-  font-size: 20px;   /* make it bigger */
-  font-weight: 500;  /* optional: slightly bold */
+  font-size: 20px;
+  font-weight: 500; 
+}
+
+.poem {
+  position: absolute;
+  width: 500px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.3;
+}
+
+.poem-top-right {
+  top: 180px;
+  right: 50px;
+  text-align: right;
+
+}
+
+.poem-bottom-left {
+  bottom: 120px;
+  left: 80px;
+  text-align: left;
 }
