@@ -90,17 +90,18 @@ label {
 }
 
 .search-button {
-  padding: 12px 20px;
-  font-size: 18px;
-  background-color: #ff6fa5;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  margin-left: 10px;
-  text-decoration: none;
-}
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #ff6fa5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    margin-left: 10px;
+    text-decoration: none;
+    display: inline-block;   
+  }
 
-.saved-button {
+/* .saved-button {
     padding: 12px 20px;
     font-size: 14px;
     background-color: #ff6fa5;
@@ -109,4 +110,4 @@ label {
     border-radius: 10px;
     margin-left: 10px;
     text-decoration: none;
-  }
+  } */
