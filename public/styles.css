@@ -98,3 +98,20 @@ label {
   border-radius: 12px;
   margin-left: 10px;
 }
+
+.saved-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #333;
+  }
+  
+  .saved-button:hover {
+    background-color: #f5e1ec;
+  }
+  

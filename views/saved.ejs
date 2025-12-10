@@ -9,19 +9,25 @@
     <h1>Saved Recipes</h1>
 
     <% if (!savedRecipes || savedRecipes.length === 0) { %>
-      <p>No recipes saved yet.</p>
+      <p>No recipes saved yet. Go back and search for some!</p>
     <% } else { %>
       <ul>
         <% savedRecipes.forEach(r => { %>
           <li>
             <h2><%= r.name %></h2>
+
             <% if (r.thumbnail) { %>
               <img src="<%= r.thumbnail %>" alt="<%= r.name %>" width="200">
             <% } %>
-            <p><strong>Category:</strong> <%= r.category %> | 
-               <strong>Area:</strong> <%= r.area %></p>
+
+            <p>
+              <strong>Category:</strong> <%= r.category %> |
+              <strong>Area:</strong> <%= r.area %>
+            </p>
+
+            <!-- Optional delete button -->
             <form action="/delete/<%= r._id %>" method="POST" style="display:inline;">
-                <button type="submit">Delete</button>
+              <button type="submit">Delete</button>
             </form>
           </li>
         <% }) %>

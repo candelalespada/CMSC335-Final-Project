@@ -59,6 +59,18 @@ router.post("/delete/:id", async (req, res) => {
     }
   });
   
+
+// Show all saved recipes
+router.get("/saved", async (req, res) => {
+    try {
+      const savedRecipes = await Recipe.find().sort({ dateSaved: -1 });
+      res.render("saved", { savedRecipes });
+    } catch (err) {
+      console.error(err);
+      res.render("saved", { savedRecipes: [] });
+    }
+  });
+  
   
 
 module.exports = router;
