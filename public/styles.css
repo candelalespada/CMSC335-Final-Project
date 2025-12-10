@@ -34,6 +34,7 @@ img {
   grid-column: 1;
   grid-row: 2;
   text-align: center;
+  margin-top: 40px;
 }
 
 .donald {
@@ -44,5 +45,10 @@ img {
 
 .images img {
   max-width: 260px;
+  height: auto;
+}
+
+.remy img {
+  max-width: 200px;
   height: auto;
 }
