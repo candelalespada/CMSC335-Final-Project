@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Search Results for "<%= query %>"</h1>
+
+    <% if (!recipes || recipes.length === 0) { %>
+      <p>No recipes found. Try another search.</p>
+    <% } else { %>
+      <ul>
+        <% recipes.forEach(meal => { %>
+          <li>
+            <h2><%= meal.strMeal %></h2>
+            <% if (meal.strMealThumb) { %>
+              <img src="<%= meal.strMealThumb %>" alt="<%= meal.strMeal %>" width="200">
+            <% } %>
+            <p><strong>Category:</strong> <%= meal.strCategory %> | <strong>Area:</strong> <%= meal.strArea %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <p><a href="/">Back to search</a></p>
+  </body>
+</html>
