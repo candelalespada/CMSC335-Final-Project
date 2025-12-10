@@ -52,3 +52,8 @@ img {
   max-width: 200px;
   height: auto;
 }
+
+label {
+  font-size: 20px;   /* make it bigger */
+  font-weight: 500;  /* optional: slightly bold */
+}
