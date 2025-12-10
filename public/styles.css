@@ -6,13 +6,31 @@ body {
     padding: 20px;
   }
   
-  h1 {
-    font-size: 48px;   /* bigger title */
-    text-align: center;  /* centers the title */
-    margin-top: 20px;
-  }
+h1 {
+  font-size: 48px;   /* bigger title */
+  text-align: center;  /* centers the title */
+  margin-top: 20px;
+}
   
-  img {
-    border-radius: 8px;
-  }
-  
+img {
+  border-radius: 8px;
+}
+
+
+.donald img {
+  width: 300px;    /* try 250–300px */
+  height: auto;    /* keeps proportions */
+}
+
+.tiania {
+  margin-bottom: 20px;
+}
+
+.remy {
+  margin-top: 40px;   /* pushes Remy down a bit */
+  margin-left: 20px;
+}
+
+.donald {
+  margin-top: 40px;   /* space above Donald */
+}
