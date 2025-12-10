@@ -97,6 +97,7 @@ label {
   border: none;
   border-radius: 12px;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 .saved-button {
@@ -107,4 +108,5 @@ label {
     border: none;
     border-radius: 10px;
     margin-left: 10px;
+    text-decoration: none;
   }

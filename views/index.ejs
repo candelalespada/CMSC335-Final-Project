@@ -12,9 +12,11 @@
     <form action="/search" method="GET">
       <label for="q">Search for a recipe:</label>
       <input type="text" id="q" name="q" class="search-box" placeholder="chicken, pasta, tacos..." required>
-      <button type="submit" class = "search-button">Search</button>
+      <div>
+        <a href="/saved" class="search-button">View Saved Recipes</a>
+        <button type="submit" class = "search-button">Search</button>
+      </div>
     </form>
-    <a href="/saved" class="saved-button">View Saved Recipes</a>
 
     <div class = images>
     <div class="tiana">
