@@ -10,26 +10,23 @@
     <h1>B.A.C.K. Recipe Finder</h1>
 
     <form action="/search" method="GET">
+        <label for="q">Search for a recipe:</label>
+        <input 
+          type="text" 
+          id="q" 
+          name="q" 
+          class="search-box" 
+          placeholder="chicken, pasta, tacos..." 
+          required
+        >
         
+        <!-- Search button only submits search -->
+        <button type="submit" class="search-button">Search</button>
+      </form>
       
-        <div class="button-row">
-            <label for="q">Search for a recipe:</label>
-            <input 
-              type="text" 
-              id="q" 
-              name="q" 
-              class="search-box" 
-              placeholder="chicken, pasta, tacos..." 
-              required
-            >
-
-          <button type="submit" class="search-button">Search</button>
-      
-          
-          <form action="/saved" method="GET" class="inline-form">
-            <button type="submit" class="search-button">View Saved Recipes</button>
-          </form>
-        </div>
+      <!-- View Saved Recipes button MUST be outside the form -->
+      <form action="/saved" method="GET" class="inline-form">
+        <button type="submit" class="search-button">View Saved Recipes</button>
       </form>
 
     <div class = images>
