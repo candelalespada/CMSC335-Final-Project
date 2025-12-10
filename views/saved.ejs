@@ -20,6 +20,9 @@
             <% } %>
             <p><strong>Category:</strong> <%= r.category %> | 
                <strong>Area:</strong> <%= r.area %></p>
+            <form action="/delete/<%= r._id %>" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
           </li>
         <% }) %>
       </ul>

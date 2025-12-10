@@ -28,7 +28,6 @@ router.get('/search', async (req, res) => {
   }
 });
 
-// Save a recipe to MongoDB
 router.post("/save", async (req, res) => {
     try {
       const { mealId, name, category, area, thumbnail, instructions } = req.body;
@@ -48,6 +47,18 @@ router.post("/save", async (req, res) => {
       res.redirect("/");
     }
   });
+
+
+router.post("/delete/:id", async (req, res) => {
+    try {
+      await Recipe.findByIdAndDelete(req.params.id);
+      res.redirect("/saved");
+    } catch (err) {
+      console.error(err);
+      res.redirect("/saved");
+    }
+  });
+  
   
 
 module.exports = router;
