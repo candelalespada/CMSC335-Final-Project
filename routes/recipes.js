@@ -24,6 +24,7 @@ router.get('/search', async (req, res) => {
     res.render('search', { query, recipes });
   } catch (err) {
     console.error(err);
+    
     res.render('search', { query, recipes: [] });
   }
 });
