@@ -36,14 +36,12 @@ require("dotenv").config({
   path: path.resolve(__dirname, "credentialsDontPost/.env"),
 });
 
-
-// Optional: choose one (Native client OR Mongoose)
 const mongoose = require("mongoose");
 
 mongoose
   .connect(process.env.MONGO_CONNECTION_STRING)
   .then(() => console.log("Connected to MongoDB (Mongoose)"))
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -55,4 +53,7 @@ const recipeRoutes = require("./routes/recipes");
 app.use("/", recipeRoutes);
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+const server = app.listen(PORT, () => {
+  console.log(`Web server started and running at http://localhost:${PORT}`);
+  console.log("\nType stop to shutdown the server: ");
+});
