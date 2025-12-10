@@ -1,3 +1,5 @@
+const Recipe = require("../models/Recipe");
+
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
@@ -25,5 +27,27 @@ router.get('/search', async (req, res) => {
     res.render('search', { query, recipes: [] });
   }
 });
+
+// Save a recipe to MongoDB
+router.post("/save", async (req, res) => {
+    try {
+      const { mealId, name, category, area, thumbnail, instructions } = req.body;
+  
+      await Recipe.create({
+        mealId,
+        name,
+        category,
+        area,
+        thumbnail,
+        instructions,
+      });
+  
+      res.redirect("/saved");
+    } catch (err) {
+      console.error(err);
+      res.redirect("/");
+    }
+  });
+  
 
 module.exports = router;

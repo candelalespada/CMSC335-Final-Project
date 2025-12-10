@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Saved Recipes</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Saved Recipes</h1>
+
+    <% if (!savedRecipes || savedRecipes.length === 0) { %>
+      <p>No recipes saved yet.</p>
+    <% } else { %>
+      <ul>
+        <% savedRecipes.forEach(r => { %>
+          <li>
+            <h2><%= r.name %></h2>
+            <% if (r.thumbnail) { %>
+              <img src="<%= r.thumbnail %>" alt="<%= r.name %>" width="200">
+            <% } %>
+            <p><strong>Category:</strong> <%= r.category %> | 
+               <strong>Area:</strong> <%= r.area %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <p><a href="/">Back to search</a></p>
+  </body>
+</html>
