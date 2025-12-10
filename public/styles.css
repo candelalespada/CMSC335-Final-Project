@@ -1,36 +1,48 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #e4bacf;
-    color: #333;
-    font-size: 16px;
-    padding: 20px;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  background-color: #e4bacf;
+  color: #333;
+  font-size: 16px;
+  padding: 20px;
+}
+
 h1 {
-  font-size: 48px;   /* bigger title */
-  text-align: center;  /* centers the title */
+  font-size: 48px;
+  text-align: center;
   margin-top: 20px;
 }
-  
+
 img {
   border-radius: 8px;
 }
 
-
-.donald img {
-  width: 300px;    /* try 250–300px */
-  height: auto;    /* keeps proportions */
-}
-
-.tiania {
-  margin-bottom: 20px;
+.image-triangle {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto auto;
+  justify-content: center;
+  gap: 20px;
 }
 
 .remy {
-  margin-top: 40px;   /* pushes Remy down a bit */
-  margin-left: 20px;
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+}
+
+.tiania {
+  grid-column: 1;
+  grid-row: 2;
+  text-align: center;
 }
 
 .donald {
-  margin-top: 40px;   /* space above Donald */
+  grid-column: 3;
+  grid-row: 2;
+  text-align: center;
+}
+
+.image-triangle img {
+  max-width: 260px;
+  height: auto;
 }
