@@ -1,38 +1,47 @@
+const express = require("express");
+const axios = require("axios");
 const Recipe = require("../models/Recipe");
 
-const express = require('express');
-const axios = require('axios');
 const router = express.Router();
 
-// home page
-router.get('/', (req, res) => {
-  res.render('index');
+// Home page
+router.get("/", (req, res) => {
+  res.render("index");
 });
 
-// search route
-router.get('/search', async (req, res) => {
+// Search route
+router.get("/search", async (req, res) => {
   const query = req.query.q;
 
   try {
     const response = await axios.get(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(query)}`
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(
+        query
+      )}`
     );
 
     const data = response.data;
     const recipes = data.meals || [];
 
-    res.render('search', { query, recipes });
+    res.render("search", { query, recipes });
   } catch (err) {
     console.error(err);
-    
-    res.render('search', { query, recipes: [] });
+    res.render("search", { query, recipes: [] });
   }
 });
 
-// ⭐ change this route so you stay on the search page
+// ⭐ Save a recipe, then go back to the SAME search page
 router.post("/save", async (req, res) => {
   try {
-    const { mealId, name, category, area, thumbnail, instructions } = req.body;
+    const {
+      mealId,
+      name,
+      category,
+      area,
+      thumbnail,
+      instructions,
+      query, // comes from the hidden input
+    } = req.body;
 
     await Recipe.create({
       mealId,
@@ -43,14 +52,20 @@ router.post("/save", async (req, res) => {
       instructions,
     });
 
-    // ⬇️ instead of going to /saved, go BACK to the page you were on
-    res.redirect("back");
+    // ✅ After saving, reload the same search results page
+    if (query) {
+      res.redirect(`/search?q=${encodeURIComponent(query)}`);
+    } else {
+      // fallback if query is missing for some reason
+      res.redirect("/");
+    }
   } catch (err) {
     console.error(err);
     res.redirect("/");
   }
 });
 
+// Delete a saved recipe
 router.post("/delete/:id", async (req, res) => {
   try {
     await Recipe.findByIdAndDelete(req.params.id);
@@ -73,3 +88,4 @@ router.get("/saved", async (req, res) => {
 });
 
 module.exports = router;
+
