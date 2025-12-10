@@ -9,26 +9,30 @@
   <body>
     <h1>B.A.C.K. Recipe Finder</h1>
 
-    <form action="/search" method="GET">
-        <label for="q">Search for a recipe:</label>
-        <input 
-          type="text" 
-          id="q" 
-          name="q" 
-          class="search-box" 
-          placeholder="chicken, pasta, tacos..." 
-          required
-        >
-        
-        <!-- Search button only submits search -->
-        <button type="submit" class="search-button">Search</button>
-      </form>
-      
-      <!-- View Saved Recipes button MUST be outside the form -->
-      <form action="/saved" method="GET" class="inline-form">
-        <button type="submit" class="search-button">View Saved Recipes</button>
-      </form>
+    <div class="search-container">
 
+
+        <form action="/search" method="GET" class="inline-form">
+          <label for="q">Search for a recipe:</label>
+      
+          <input
+            type="text"
+            id="q"
+            name="q"
+            class="search-box"
+            placeholder="chicken, pasta, tacos..."
+            required
+          >
+      
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      
+
+        <form action="/saved" method="GET" class="inline-form">
+          <button type="submit" class="search-button">View Saved Recipes</button>
+        </form>
+      
+      </div>
     <div class = images>
     <div class="tiana">
       <img
