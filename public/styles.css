@@ -7,7 +7,9 @@ body {
   }
   
   h1 {
-    font-size: 32px;
+    font-size: 48px;   /* bigger title */
+    text-align: center;  /* centers the title */
+    margin-top: 20px;
   }
   
   img {
