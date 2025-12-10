@@ -103,6 +103,7 @@ label {
     justify-content: center;
     cursor: pointer;     
     font-weight: 500;      
+    width: 170px;
   }
 
 /* .saved-button {
