@@ -22,6 +22,7 @@ img {
   grid-template-rows: auto auto;
   justify-content: center;
   gap: 20px;
+  margin-top: 50px;
 }
 
 .remy {
@@ -34,7 +35,6 @@ img {
   grid-column: 1;
   grid-row: 2;
   text-align: center;
-  margin-top: 40px;
 }
 
 .donald {
