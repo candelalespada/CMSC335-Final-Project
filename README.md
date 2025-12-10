@@ -4,10 +4,10 @@
 
 **App Description:** Allow users to enter an ingredient and returns a list of recipes including the entered ingredient.
 
-**YouTube Video Link:** ---
+**YouTube Video Link:** 
 
 **APIs:** [TheMealDB](https://www.themealdb.com/api.php)
 
 **Contact Email:** kgranell@terpmail.umd.edu
 
-**Deployed App Link:** ---
+**Deployed App Link:** [Render] (https://cmsc335-final-project-seqy.onrender.com/)
