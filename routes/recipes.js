@@ -30,7 +30,7 @@ router.get("/search", async (req, res) => {
   }
 });
 
-// ⭐ Save a recipe, then go back to the SAME search page
+// Save a recipe
 router.post("/save", async (req, res) => {
   try {
     const {
@@ -40,7 +40,7 @@ router.post("/save", async (req, res) => {
       area,
       thumbnail,
       instructions,
-      query, // comes from the hidden input
+      query, 
     } = req.body;
 
     await Recipe.create({
@@ -52,11 +52,10 @@ router.post("/save", async (req, res) => {
       instructions,
     });
 
-    // ✅ After saving, reload the same search results page
+    
     if (query) {
       res.redirect(`/search?q=${encodeURIComponent(query)}`);
     } else {
-      // fallback if query is missing for some reason
       res.redirect("/");
     }
   } catch (err) {
