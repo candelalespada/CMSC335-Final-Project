@@ -15,7 +15,7 @@ mongoose
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
+app.use(express.static("public"));
 
 const recipeRoutes = require("./routes/recipes");
 app.use("/", recipeRoutes);
