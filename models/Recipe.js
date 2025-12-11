@@ -7,7 +7,7 @@ const recipeSchema = new mongoose.Schema({
   area: String,
   thumbnail: String,
   instructions: String,
-  notes: String,  // optional: user notes later
+  notes: String,
   dateSaved: {
     type: Date,
     default: Date.now,
