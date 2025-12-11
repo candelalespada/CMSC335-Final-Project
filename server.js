@@ -49,7 +49,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 // ROUTES
-const recipeRoutes = require("./routes/recipes");
+const recipeRoutes = require("/recipes");
 app.use("/", recipeRoutes);
 
 const PORT = 3000;
