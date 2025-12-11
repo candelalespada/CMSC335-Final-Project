@@ -49,7 +49,7 @@ app.use(express.static("public"));
 app.use(express.static(__dirname));
 
 // ROUTES
-const recipeRoutes = require(".routes/recipes");
+const recipeRoutes = require("./routes/recipes");
 app.use("/", recipeRoutes);
 
 const PORT = 3000;
