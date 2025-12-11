@@ -1,4 +1,4 @@
-**Submitted by:** Kathleen Granelli (kgranell)
+**Submitted by:** Candela Lespada (clespada)
 
 **Group Members:** Anika Nair (anairr), Candela Lespada (clespada), Kathleen Granelli (kgranell), Brooke Laumann (blaumann)
 
